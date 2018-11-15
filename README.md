@@ -80,7 +80,7 @@ Airbnb also maintains a [JavaScript Style Guide][airbnb-javascript].
       ...
     end
 
-    # good
+    # bad
     def self.create_translation(phrase_id,
                                 phrase_key,
                                 target_locale,
@@ -1179,9 +1179,9 @@ In either case:
 * <a name="snake-case"></a>Use `snake_case` for methods and variables.
     <sup>[[link](#snake-case)]</sup>
 
-* <a name="camel-case"></a>Use `CamelCase` for classes and modules. (Keep
+* <a name="pascal-case"></a>Use `PascalCase` for classes and modules. (Keep
     acronyms like HTTP, RFC, XML uppercase.)
-    <sup>[[link](#camel-case)]</sup>
+    <sup>[[link](#pascal-case)]</sup>
 
 * <a name="screaming-snake-case"></a>Use `SCREAMING_SNAKE_CASE` for other
     constants.<sup>[[link](#screaming-snake-case)]</sup>
@@ -1686,14 +1686,14 @@ In either case:
 ## Rails
 
 * <a name="next-line-return"></a>When immediately returning after calling
-    `render` or `redirect_to`, put `return` on the next line, not the same line.
+    `render` or `redirect_to`, put `return` on the same line, not the next line.
     <sup>[[link](#next-line-return)]</sup>
 
     ```ruby
     # bad
     render :text => 'Howdy' and return
 
-    # good
+    # bad
     render :text => 'Howdy'
     return
 
@@ -1702,8 +1702,7 @@ In either case:
 
     # good
     if foo.present?
-      render :text => 'Howdy'
-      return
+      return render :text => 'Howdy'
     end
     ```
 
